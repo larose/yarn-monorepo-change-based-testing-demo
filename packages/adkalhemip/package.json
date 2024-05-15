@@ -1,0 +1,16 @@
+{
+  "name": "adkalhemip",
+  "version": "1.0.0",
+  "packageManager": "yarn@4.2.2",
+  "dependencies": {
+    "eicxfcouys": "1.0.0",
+    "xlwpwgkpwt": "1.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.2.0",
+    "@types/node": "^20.12.12",
+    "eslint": "9.2.0",
+    "typescript": "5.4.5",
+    "typescript-eslint": "7.9.0"
+  }
+}

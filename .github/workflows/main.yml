@@ -1,0 +1,43 @@
+name: Main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+jobs:
+  main:
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        command: ["lint", "typecheck"]
+
+    steps:
+      - name: Setup
+        id: setup
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "change-based-test-selection=true" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: |
+          corepack enable
+          yarn install
+
+      - name: Run ${{ matrix.command }}
+        run: |
+          CHANGE_BASED_TEST_SELECTION=${{ steps.setup.outputs.change-based-test-selection }} \
+            make ${{ matrix.command }}
