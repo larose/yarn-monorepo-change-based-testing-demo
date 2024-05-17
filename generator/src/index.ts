@@ -9,7 +9,7 @@ async function main() {
 
   generatePackages({
     directory: packagesDirectory,
-    numPackages: 80,
+    numPackages: 100,
   });
 }
 
