@@ -18,12 +18,6 @@ jobs:
         command: ["lint", "typecheck"]
 
     steps:
-      - name: Setup
-        id: setup
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          echo "change-based-test-selection=true" >> "$GITHUB_OUTPUT"
-
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -34,12 +28,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install
+      - name: Install Dependencies
         run: |
           corepack enable
           yarn install
 
+      - name: Set Change-Based Test Selection
+        id: set-test-selection
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          echo "change-based-test-selection=true" >> "$GITHUB_OUTPUT"
+
       - name: Run ${{ matrix.command }}
         run: |
-          CHANGE_BASED_TEST_SELECTION=${{ steps.setup.outputs.change-based-test-selection }} \
+          CHANGE_BASED_TEST_SELECTION=${{ steps.set-test-selection.outputs.change-based-test-selection }} \
             make ${{ matrix.command }}
