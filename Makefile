@@ -4,7 +4,7 @@ else
   PACKAGE_SELECTION_FLAG := --all
 endif
 
-FOR_EACH_CMD := yarn workspaces foreach $(PACKAGE_SELECTION_FLAG) --exclude generator --exclude root --topological -vv
+FOR_EACH_CMD := yarn workspaces foreach $(PACKAGE_SELECTION_FLAG) --recursive --topological --exclude generator --exclude root -vv
 
 .PHONY: lint
 lint:
