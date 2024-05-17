@@ -26,7 +26,7 @@ function randomString({
   length: number;
   prng: ParkMillerPRNG;
 }) {
-  let buffer: Array<string> = [];
+  const buffer: Array<string> = [];
 
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(prng.generate() * CHARACTER_SET.length);
@@ -132,7 +132,7 @@ export async function generatePackages({
 
     await fs.mkdir(path.join(directory, packageName, "src"));
 
-    let indexTsBuffer: Array<string> = [];
+    const indexTsBuffer: Array<string> = [];
 
     for (let j = 0; j < 12_000; j++) {
       indexTsBuffer.push(generateRandomFunctionString(packagePrng));

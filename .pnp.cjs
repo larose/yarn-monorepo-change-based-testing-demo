@@ -579,15 +579,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["@types/randomstring", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "../../.yarn/berry/cache/@types-randomstring-npm-1.3.0-79204e77da-10c0.zip/node_modules/@types/randomstring/",\
-        "packageDependencies": [\
-          ["@types/randomstring", "npm:1.3.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["@typescript-eslint/eslint-plugin", [\
       ["npm:7.9.0", {\
         "packageLocation": "../../.yarn/berry/cache/@typescript-eslint-eslint-plugin-npm-7.9.0-0033d853d0-10c0.zip/node_modules/@typescript-eslint/eslint-plugin/",\
@@ -1539,10 +1530,11 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./generator/",\
         "packageDependencies": [\
           ["generator", "workspace:generator"],\
+          ["@eslint/js", "npm:9.2.0"],\
           ["@types/node", "npm:20.12.12"],\
-          ["@types/randomstring", "npm:1.3.0"],\
-          ["randomstring", "npm:1.3.0"],\
-          ["typescript", "patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"]\
+          ["eslint", "npm:9.2.0"],\
+          ["typescript", "patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c"],\
+          ["typescript-eslint", "virtual:36a01d8083315b8a6e8362097258ea8bc0f9dfb672cb210742e054760850c673a1038f542a6b7156397b5275ace8ee0482231cac5e8898044fa1a1c29f78ee5b#npm:7.9.0"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2456,25 +2448,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["randombytes", [\
-      ["npm:2.0.3", {\
-        "packageLocation": "../../.yarn/berry/cache/randombytes-npm-2.0.3-4666cb2cde-10c0.zip/node_modules/randombytes/",\
-        "packageDependencies": [\
-          ["randombytes", "npm:2.0.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["randomstring", [\
-      ["npm:1.3.0", {\
-        "packageLocation": "../../.yarn/berry/cache/randomstring-npm-1.3.0-31552a2111-10c0.zip/node_modules/randomstring/",\
-        "packageDependencies": [\
-          ["randomstring", "npm:1.3.0"],\
-          ["randombytes", "npm:2.0.3"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["resolve-from", [\
       ["npm:4.0.0", {\
         "packageLocation": "../../.yarn/berry/cache/resolve-from-npm-4.0.0-f758ec21bf-10c0.zip/node_modules/resolve-from/",\
@@ -2790,13 +2763,6 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["typescript", [\
-      ["patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c", {\
-        "packageLocation": "../../.yarn/berry/cache/typescript-patch-0b5476accc-10c0.zip/node_modules/typescript/",\
-        "packageDependencies": [\
-          ["typescript", "patch:typescript@npm%3A5.4.3#optional!builtin<compat/typescript>::version=5.4.3&hash=5adc0c"]\
-        ],\
-        "linkType": "HARD"\
-      }],\
       ["patch:typescript@npm%3A5.4.5#optional!builtin<compat/typescript>::version=5.4.5&hash=5adc0c", {\
         "packageLocation": "../../.yarn/berry/cache/typescript-patch-6e159bfddb-10c0.zip/node_modules/typescript/",\
         "packageDependencies": [\
